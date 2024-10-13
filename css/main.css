@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/*common*/
+*{margin: 0; padding: 0;}
+body{font: 12px 'Open sans', sans-serif; color: #444;}
+ol, ul, li{list-style: none;}
+a{text-decoration: none; color: #444;}
+
+/*섹션 이동 버튼*/
+.btn_page {position: fixed; right: 20px; top: 50%; margin-top: -60px; z-index: 100;}
+.btn_page li{margin: 15px 0;}
+.btn_page li a{display: block; width: 20px; height: 20px; text-indent: -9999px; background: url(../images/page_bg.png) no-repeat;}
+.btn_page li:hover a{background-position: center bottom;}
+.btn_page li.on a{background-position: center bottom;}
+
+/*layout*/
+header{width: 100%; height: 90px; background-color: rgba(255,255,255,0.9); position: absolute; left: 0; top: 1277px; z-index: 100;}
+header.on{position: fixed; top: 0;}
+main{width: 100%;}
+main section{width: 100%;}
+.section1{height: 1277px; background: #f4f4f4; position: relative; z-index: 10;}
+.section2{height: 1025px; background: url(../images/con_02_bg.jpg) repeat-x;}
+.section3{height: 1000px;}
+
+/*header*/
+header h1{text-align: center; margin-top: 30px;}
+header h1 a img{width: 134px;}
+
+/*section1*/
+.section1 .btn_shop {position: absolute; left: 20px; top: 20px;}
+.section1 .btn_shop img{width: 90px;}
+
+.section1 .btn_shop2 {position: absolute; right: 20px; top: 25px;}
+.section1 .btn_shop2 img{width: 37px;}
+
+.section1 .con{margin: 0 auto; width: 1000px; position: relative;}
+.section1 .con .tit{position: absolute; left: 70px; top: 300px; text-align: center;}
+.section1 .con .tit p{color: #978f88; line-height: 18px; margin: 15px 0 25px 0;}
+.section1 .con .tit > img{width: 338px;}
+
+/*section2*/
+.section2{background: url(../images/con_02_bg.jpg) repeat-x;}
+.section2 .con{width: 1000px; height: 1025px; margin: 0 auto; position: relative;}
+.section2 .con .case{position: absolute; left: 0; top: -1000px; z-index: 5;}
+.section2 .con .case.on{animation: caseMove 2s; animation-fill-mode: forwards;}
+
+@keyframes caseMove{
+    80%{top: 200px;}
+    100%{top: 100px;}
+}
+
+/*
+animation-fill-mode 속성에는 none, forwards, backwards, both 가 있다.
+애니메이션이 끝난 후의 상태를 설정한다.
+
+none : 아무것도 지정하지 않은 상태.
+forwards : 애니메이션이 키프레임의 100%에 도달했을 때 마지막 키프레임을 유지.
+backwards : 애니메이션이 키프레임의 100%에 도달했을 때 처음 키프레임으로 돌아간다.
+both : forwards, backwards를 둘 다 적용한다.
+*/
+
+.section2 .con .tit{position: absolute; right: 100px; top: 300px;}
+.section2 .con .tit h2{color: #d1b694; font-size: 24px; margin-top: 20px;}
+.section2 .con .tit p{color: #c1b9b2; margin: 20px 0 30px 0; line-height: 26px;}
+.section2 .con .tit > img {width: 351px;}
+
+/*section3*/
+.section3 .con{width: 1000px; height: 1000px; margin: 0 auto; text-align: center; position: relative; overflow: hidden;}
+.section3 .con .tit{position: absolute; left: 150px; top: -105px; width: 100%; z-index: 100;}
+.section3 .con h2{font-size: 32px; color: #444; font-weight: bold; padding-top: 100px;}
+.section3 .con p{margin: 15px 0 20px 0;}
+.section3 .con p sup{font-size: 8px;}
+.section3 .con .cat{transform: translateY(1000px); opacity: 1;}
+.section3 .con.on .cat{animation: catMove 3s; animation-fill-mode: forwards;}
+.section3 .con .case2{position: absolute; left: 0; bottom: -100px; opacity: 0;}
+.section3 .con.on .case2{animation: caseMove2 2s 2s; animation-fill-mode: forwards;}
+
+
+@keyframes catMove{
+    70%{transform: translateY(100px); opacity: 1;}
+    100%{transform: translateY(100px); opacity: 0;}
+}
+
+@keyframes caseMove2{
+    100%{opacity: 1;}
+}
